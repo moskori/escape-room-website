@@ -1,0 +1,56 @@
+body {
+  background:
+    radial-gradient(circle at top, #17151f 0%, #0b0a0f 45%, #050506 100%);
+  color: #ece8f4;
+}
+
+header {
+  min-height: 85vh;
+  background:
+    linear-gradient(rgba(5, 4, 8, 0.35), rgba(5, 4, 8, 0.9)),
+    radial-gradient(circle at center, #30243f 0%, #15101c 40%, #08070a 75%);
+}
+
+header h1 {
+  font-size: clamp(48px, 9vw, 100px);
+  letter-spacing: 0.18em;
+  text-shadow: 0 0 18px rgba(170, 120, 255, 0.25);
+}
+
+header p {
+  color: #bcb4ca;
+}
+
+section {
+  border-bottom-color: #2b2532;
+}
+
+section h2 {
+  color: #ddd3ea;
+}
+
+section p {
+  color: #b8afc3;
+}
+
+a {
+  color: #cdb7ff;
+}
+.section-label {
+  margin: 0 0 14px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: #7f8991;
+}
+
+#about h2 {
+  margin-bottom: 24px;
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.3;
+}
+
+.about-text {
+  max-width: 760px;
+  font-size: 18px;
+  line-height: 2;
+}
