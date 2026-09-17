@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moskori.github.io/escape-room-website/sitemap.xml
