@@ -491,3 +491,19 @@ a {
 
   background: #59636a;
 }
+.hero-content {
+  text-align: center;
+}
+
+.hero-copy {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  justify-content: center;
+}
+
+.hero-info {
+  justify-content: center;
+}
