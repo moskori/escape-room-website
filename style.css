@@ -801,3 +801,95 @@ a {
     padding: 32px 24px;
   }
 }
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 28px;
+
+  padding: 14px 24px;
+
+  background: rgba(8, 10, 12, 0.94);
+  border-bottom: 1px solid #262c31;
+
+  backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: #9da7ae;
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-games-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 16px;
+
+  background: #f0f2f3;
+  color: #0b0d0f;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+
+  border-radius: 4px;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.nav-games-button:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+}
+
+@media (max-width: 800px) {
+  .site-nav {
+    grid-template-columns: auto auto;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-games-button {
+    justify-self: end;
+  }
+}
