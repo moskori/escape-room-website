@@ -44,6 +44,9 @@ const revealObserver = new IntersectionObserver(
     threshold: 0.12,
   }
 );
+const revealElements = document.querySelectorAll(
+  ".about-section, .games-section, .access-section, .faq-section, .contact-section"
+);
 
 
 
