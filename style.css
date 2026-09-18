@@ -1301,3 +1301,74 @@ a {
     overflow: visible;
   }
 }
+@media (max-width: 600px) {
+  .hero {
+    min-height: 100svh;
+    padding: 80px 20px 70px;
+  }
+
+  .hero-title {
+    font-size: clamp(58px, 18vw, 86px);
+  }
+
+  .hero-copy {
+    max-width: 520px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-button {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 12px;
+  }
+
+  .hero-info {
+    gap: 6px;
+  }
+
+  .hero-info span {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+}@media (max-width: 600px) {
+  .hero {
+    min-height: 100svh;
+    padding: 80px 20px 70px;
+  }
+
+  .hero-title {
+    font-size: clamp(58px, 18vw, 86px);
+  }
+
+  .hero-copy {
+    max-width: 520px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-button {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 12px;
+  }
+
+  .hero-info {
+    gap: 6px;
+  }
+
+  .hero-info span {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+}
