@@ -1375,3 +1375,148 @@ a {
 .site-nav .nav-games-button {
   color: #0b0d0f;
 }
+.access-section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.access-card {
+  padding: 28px;
+
+  background: #12171b;
+  border: 1px solid #293138;
+  border-radius: 10px;
+
+  min-height: 220px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.access-card:hover {
+  transform: translateY(-5px);
+  border-color: #4c5962;
+  background: #151b20;
+}
+
+.access-label {
+  display: block;
+  margin-bottom: 34px;
+
+  font-size: 10px;
+  letter-spacing: 0.18em;
+
+  color: #6f7a82;
+}
+
+.access-card h3 {
+  margin: 0 0 14px;
+
+  font-size: 18px;
+  color: #eef1f2;
+}
+
+.access-card p {
+  margin: 0 0 8px;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #f3f5f6;
+}
+
+.access-card small {
+  color: #88939b;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .access-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .access-card {
+    min-height: auto;
+  }
+}.access-section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.access-card {
+  padding: 28px;
+
+  background: #12171b;
+  border: 1px solid #293138;
+  border-radius: 10px;
+
+  min-height: 220px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.access-card:hover {
+  transform: translateY(-5px);
+  border-color: #4c5962;
+  background: #151b20;
+}
+
+.access-label {
+  display: block;
+  margin-bottom: 34px;
+
+  font-size: 10px;
+  letter-spacing: 0.18em;
+
+  color: #6f7a82;
+}
+
+.access-card h3 {
+  margin: 0 0 14px;
+
+  font-size: 18px;
+  color: #eef1f2;
+}
+
+.access-card p {
+  margin: 0 0 8px;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #f3f5f6;
+}
+
+.access-card small {
+  color: #88939b;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .access-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .access-card {
+    min-height: auto;
+  }
+}
