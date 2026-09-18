@@ -15,3 +15,11 @@ menuButton.addEventListener("click", () => {
 
   menuButton.setAttribute("aria-expanded", isOpen);
 });
+const navLinks = document.querySelectorAll(".nav-links a");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    siteNav.classList.remove("menu-open");
+    menuButton.setAttribute("aria-expanded", "false");
+  });
+});
