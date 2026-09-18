@@ -1520,3 +1520,145 @@ a {
     min-height: auto;
   }
 }
+.contact-section {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 20px;
+}
+
+.contact-main {
+  padding: 42px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0)
+    ),
+    #12171b;
+
+  border: 1px solid #293138;
+  border-radius: 12px;
+}
+
+.contact-main h2 {
+  margin: 0 0 20px;
+
+  font-size: clamp(34px, 5vw, 52px);
+}
+
+.contact-description {
+  max-width: 620px;
+
+  margin: 0;
+
+  line-height: 1.9;
+
+  color: #9ea8af;
+}
+
+.contact-primary-button {
+  margin-top: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+
+  padding: 14px 18px;
+
+  background: #f0f2f3;
+  color: #0b0d0f;
+
+  text-decoration: none;
+  font-weight: 700;
+
+  border-radius: 4px;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.contact-primary-button:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+}
+
+.contact-game-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  min-height: 100%;
+
+  padding: 32px;
+
+  background:
+    radial-gradient(
+      circle at 70% 20%,
+      #2a3138 0%,
+      #151a1f 50%,
+      #101418 100%
+    );
+
+  border: 1px solid #293138;
+  border-radius: 12px;
+
+  color: #eef1f2;
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.contact-game-card:hover {
+  transform: translateY(-5px);
+  border-color: #4c5962;
+}
+
+.contact-card-label {
+  display: block;
+
+  margin-bottom: 48px;
+
+  font-size: 10px;
+  letter-spacing: 0.18em;
+
+  color: #7f8991;
+}
+
+.contact-game-card h3 {
+  margin: 0 0 10px;
+
+  font-size: 28px;
+}
+
+.contact-game-card p {
+  margin: 0;
+
+  color: #929ca3;
+}
+
+.contact-card-arrow {
+  font-size: 24px;
+  color: #98a2a9;
+}
+
+@media (max-width: 800px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-main {
+    padding: 30px 24px;
+  }
+
+  .contact-game-card {
+    min-height: 220px;
+  }
+}
