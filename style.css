@@ -985,3 +985,162 @@ a {
     margin-bottom: 32px;
   }
 }
+.faq-section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.faq-item {
+  padding: 0;
+  overflow: hidden;
+
+  background: #12171b;
+  border: 1px solid #293138;
+  border-radius: 8px;
+}
+
+.faq-question {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 22px 24px;
+
+  background: transparent;
+  border: none;
+
+  color: #eef1f2;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  background: #171d22;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+
+  font-size: 24px;
+  font-weight: 300;
+
+  color: #89949c;
+
+  transition: transform 0.25s ease;
+}
+
+.faq-answer {
+  display: none;
+
+  padding: 0 24px 22px;
+}
+
+.faq-answer p {
+  margin: 0;
+
+  line-height: 1.9;
+
+  color: #9ea8af;
+}
+
+.faq-item.is-open .faq-answer {
+  display: block;
+}
+
+.faq-item.is-open .faq-icon {
+  transform: rotate(45deg);
+}.faq-section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.faq-item {
+  padding: 0;
+  overflow: hidden;
+
+  background: #12171b;
+  border: 1px solid #293138;
+  border-radius: 8px;
+}
+
+.faq-question {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 22px 24px;
+
+  background: transparent;
+  border: none;
+
+  color: #eef1f2;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  background: #171d22;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+
+  font-size: 24px;
+  font-weight: 300;
+
+  color: #89949c;
+
+  transition: transform 0.25s ease;
+}
+
+.faq-answer {
+  display: none;
+
+  padding: 0 24px 22px;
+}
+
+.faq-answer p {
+  margin: 0;
+
+  line-height: 1.9;
+
+  color: #9ea8af;
+}
+
+.faq-item.is-open .faq-answer {
+  display: block;
+}
+
+.faq-item.is-open .faq-icon {
+  transform: rotate(45deg);
+}
