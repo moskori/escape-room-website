@@ -7,6 +7,8 @@ faqQuestions.forEach((button) => {
     item.classList.toggle("is-open");
   });
 });
+
+
 const menuButton = document.querySelector(".menu-button");
 const siteNav = document.querySelector(".site-nav");
 
@@ -15,6 +17,8 @@ menuButton.addEventListener("click", () => {
 
   menuButton.setAttribute("aria-expanded", isOpen);
 });
+
+
 const navLinks = document.querySelectorAll(".nav-links a");
 
 navLinks.forEach((link) => {
@@ -23,6 +27,8 @@ navLinks.forEach((link) => {
     menuButton.setAttribute("aria-expanded", "false");
   });
 });
+
+
 const revealElements = document.querySelectorAll(
   ".about-section, .games-section, .access-section, .faq-section, .contact-section"
 );
@@ -30,6 +36,7 @@ const revealElements = document.querySelectorAll(
 revealElements.forEach((element) => {
   element.classList.add("reveal");
 });
+
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -44,10 +51,11 @@ const revealObserver = new IntersectionObserver(
     threshold: 0.12,
   }
 );
-const revealElements = document.querySelectorAll(
-  ".about-section, .games-section, .access-section, .faq-section, .contact-section"
-);
 
+
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
 
 
 
