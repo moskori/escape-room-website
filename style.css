@@ -783,7 +783,7 @@ a {
   transform: scale(1.01);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
   .section-header {
     grid-template-columns: 1fr;
     gap: 12px;
