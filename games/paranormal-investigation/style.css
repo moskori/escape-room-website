@@ -652,3 +652,58 @@ a {
     line-height: 1.8;
   }
 }
+.game-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+.game-footer-home {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+
+  padding: 28px 0;
+
+  border-top: 1px solid #342d39;
+  border-bottom: 1px solid #342d39;
+
+  color: #ddd4e3;
+  text-decoration: none;
+}
+
+.game-footer-home > span:first-child {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: #766b7d;
+}
+
+.game-footer-home strong {
+  font-size: 28px;
+  letter-spacing: 0.06em;
+}
+
+.game-footer-arrow {
+  font-size: 24px;
+  color: #8f8197;
+}
+
+.game-footer-copy {
+  margin: 20px 0 0;
+
+  font-size: 11px;
+  letter-spacing: 0.08em;
+
+  color: #6f6674;
+}
+
+@media (max-width: 700px) {
+  .game-footer {
+    padding: 0 22px 36px;
+  }
+
+  .game-footer-home strong {
+    font-size: 22px;
+  }
+}
