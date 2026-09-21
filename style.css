@@ -1587,6 +1587,11 @@ a {
   transform: translateY(-3px);
   background: #ffffff;
 }
+.contact-disabled {
+  cursor: default;
+  opacity: 0.55;
+  pointer-events: none;
+}
 
 .contact-game-card {
   display: flex;
