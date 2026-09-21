@@ -560,7 +560,7 @@ a {
   border-bottom: none;
 }
 
-.news-item:hover {
+a.news-item:hover {
   background: #1a2025;
 }
 
