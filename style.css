@@ -1688,3 +1688,209 @@ a.news-item:hover {
     transition: none;
   }
 }
+/* =========================
+   HERO TITLE EFFECTS
+========================= */
+
+.hero-title-effect {
+  position: relative;
+}
+
+.hero-title-effect span {
+  position: relative;
+  display: inline-block;
+}
+
+/* 1. GLITCH */
+.effect-glitch span::before,
+.effect-glitch span::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.effect-glitch span::before {
+  transform: translateX(-3px);
+  text-shadow: 3px 0 rgba(110, 170, 255, 0.7);
+}
+
+.effect-glitch span::after {
+  transform: translateX(3px);
+  text-shadow: -3px 0 rgba(255, 90, 140, 0.65);
+}
+
+.effect-glitch span {
+  animation: titleEntrance 1s ease-out both;
+}
+
+.effect-glitch span::before {
+  animation: glitchBefore 6s infinite;
+}
+
+.effect-glitch span::after {
+  animation: glitchAfter 6s infinite;
+}
+
+@keyframes titleEntrance {
+  from {
+    opacity: 0;
+    transform: scale(1.08);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes glitchBefore {
+  0%, 88%, 100% {
+    opacity: 0;
+  }
+
+  89% {
+    opacity: 0.8;
+    clip-path: inset(10% 0 65% 0);
+  }
+
+  90% {
+    opacity: 0.5;
+    clip-path: inset(55% 0 20% 0);
+    transform: translateX(5px);
+  }
+
+  91% {
+    opacity: 0;
+  }
+}
+
+@keyframes glitchAfter {
+  0%, 90%, 100% {
+    opacity: 0;
+  }
+
+  91% {
+    opacity: 0.75;
+    clip-path: inset(65% 0 8% 0);
+  }
+
+  92% {
+    opacity: 0.45;
+    clip-path: inset(25% 0 45% 0);
+    transform: translateX(-5px);
+  }
+
+  93% {
+    opacity: 0;
+  }
+}
+
+/* 2. SCAN LIGHT */
+.effect-scan span {
+  overflow: hidden;
+  animation: titleEntrance 1s ease-out both;
+}
+
+.effect-scan span::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -35%;
+
+  width: 22%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
+
+  transform: skewX(-18deg);
+
+  animation: titleScan 4s ease-in-out infinite;
+}
+
+@keyframes titleScan {
+  0%, 20% {
+    left: -35%;
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 0.9;
+  }
+
+  55% {
+    left: 115%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 115%;
+    opacity: 0;
+  }
+}
+
+/* 3. GLOW */
+.effect-glow span {
+  animation:
+    titleEntrance 1s ease-out both,
+    titleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 0 rgba(255,255,255,0);
+  }
+
+  50% {
+    text-shadow:
+      0 0 18px rgba(210, 220, 255, 0.25),
+      0 0 42px rgba(130, 150, 200, 0.14);
+  }
+}
+
+/* 4. LETTER SHIFT */
+.effect-shift span {
+  animation:
+    titleEntrance 1s ease-out both,
+    titleShift 7s infinite;
+}
+
+@keyframes titleShift {
+  0%, 92%, 100% {
+    transform: translateX(0) skewX(0);
+    letter-spacing: -0.04em;
+  }
+
+  93% {
+    transform: translateX(-3px) skewX(-2deg);
+    letter-spacing: -0.02em;
+  }
+
+  94% {
+    transform: translateX(4px) skewX(2deg);
+    letter-spacing: -0.06em;
+  }
+
+  95% {
+    transform: translateX(0) skewX(0);
+    letter-spacing: -0.04em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-effect span,
+  .hero-title-effect span::before,
+  .hero-title-effect span::after {
+    animation: none !important;
+  }
+}
