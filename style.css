@@ -1891,9 +1891,7 @@ a.news-item:hover {
 
   55% {
     opacity: 1;
-    transform: translate3d(1em, 0, 0) scale(1);
-
-    /* ここから徐々に加速 */
+    transform: translate3d(0.48em, 0, 0) scale(1);
     animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
   }
 
@@ -1916,9 +1914,7 @@ a.news-item:hover {
 
   55% {
     opacity: 1;
-    transform: translate3d(-1em, 0, 0) scale(1);
-
-    /* 交差後に加速 */
+    transform: translate3d(-0.48em, 0, 0) scale(1);
     animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
   }
 
