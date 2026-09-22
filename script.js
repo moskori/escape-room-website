@@ -54,11 +54,11 @@ if ("IntersectionObserver" in window) {
     }
   );
 
-  revealElements.forEach((element) => {
+  sharedRevealElements.forEach((element) => {
     revealObserver.observe(element);
   });
 } else {
-  revealElements.forEach((element) => {
+  sharedRevealElements.forEach((element) => {
     element.classList.add("is-visible");
   });
 }
