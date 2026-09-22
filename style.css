@@ -1846,3 +1846,160 @@ a.news-item:hover {
     opacity: 0;
   }
 }
+/* =========================
+   CROSS + GLITCH TITLE
+========================= */
+
+.effect-cross-glitch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.effect-cross-glitch > span {
+  display: inline-block;
+  position: relative;
+}
+
+.title-left {
+  animation:
+    crossLeft 2.8s cubic-bezier(0.16, 1, 0.3, 1) both,
+    titleGlitchLeft 5s 3s infinite;
+}
+
+.title-right {
+  animation:
+    crossRight 2.8s cubic-bezier(0.16, 1, 0.3, 1) both,
+    titleGlitchRight 5s 3s infinite;
+}
+
+.title-dot {
+  animation: dotReveal 2.8s ease both;
+}
+
+/* 超：右へ進み、脱出を越えて戻る */
+@keyframes crossLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-0.6em) scale(1.2);
+    filter: blur(10px);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translateX(0.3em) scale(1.08);
+    filter: blur(3px);
+  }
+
+  52% {
+    transform: translateX(1.05em) scale(1);
+    filter: blur(0);
+  }
+
+  68% {
+    transform: translateX(0.45em);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 脱出：左へ進み、超を越えて戻る */
+@keyframes crossRight {
+  0% {
+    opacity: 0;
+    transform: translateX(0.6em) scale(1.2);
+    filter: blur(10px);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translateX(-0.3em) scale(1.08);
+    filter: blur(3px);
+  }
+
+  52% {
+    transform: translateX(-1.05em) scale(1);
+    filter: blur(0);
+  }
+
+  68% {
+    transform: translateX(-0.45em);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes dotReveal {
+  0%, 45% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 交差後の軽いグリッチ */
+@keyframes titleGlitchLeft {
+  0%, 84%, 100% {
+    transform: translateX(0);
+  }
+
+  85% {
+    transform: translateX(-8px) skewX(-4deg);
+  }
+
+  86% {
+    transform: translateX(7px) skewX(3deg);
+  }
+
+  87% {
+    transform: translateX(-3px);
+  }
+
+  88% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes titleGlitchRight {
+  0%, 86%, 100% {
+    transform: translateX(0);
+  }
+
+  87% {
+    transform: translateX(9px) skewX(4deg);
+  }
+
+  88% {
+    transform: translateX(-7px) skewX(-3deg);
+  }
+
+  89% {
+    transform: translateX(3px);
+  }
+
+  90% {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .effect-cross-glitch > span {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
