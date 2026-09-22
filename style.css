@@ -1861,21 +1861,6 @@ a.news-item:hover {
   position: relative;
 }
 
-.title-left {
-  animation:
-    crossLeft 2.8s cubic-bezier(0.16, 1, 0.3, 1) both,
-    titleGlitchLeft 5s 3s infinite;
-}
-
-.title-right {
-  animation:
-    crossRight 2.8s cubic-bezier(0.16, 1, 0.3, 1) both,
-    titleGlitchRight 5s 3s infinite;
-}
-
-.title-dot {
-  animation: dotReveal 2.8s ease both;
-}
 
 /* 超：右へ進み、脱出を越えて戻る */
 .title-left {
