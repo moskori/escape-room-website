@@ -1962,14 +1962,14 @@ a.news-item:hover {
   text-shadow: 4px 0 rgba(80, 170, 255, 0.85);
 
   animation:
-    continuousGlitchBlue 1.7s 3.2s infinite steps(1, end);
+    continuousGlitchBlue 1.7s 3s infinite steps(1, end);
 }
 
 .effect-cross-glitch > span::after {
   text-shadow: -4px 0 rgba(255, 70, 140, 0.8);
 
   animation:
-    continuousGlitchRed 1.7s 3.2s infinite steps(1, end);
+    continuousGlitchRed 1.7s 3s infinite steps(1, end);
 }
 
 @keyframes continuousGlitchBlue {
