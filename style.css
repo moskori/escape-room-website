@@ -1864,59 +1864,37 @@ a.news-item:hover {
 
 /* 超：右へ進み、脱出を越えて戻る */
 .title-left {
-  animation:
-    crossLeft 3.2s linear both,
-    titleGlitchLeft 5s 3.4s infinite;
-
+  animation: crossLeft 3.2s both;
   will-change: transform, opacity;
 }
 
 .title-right {
-  animation:
-    crossRight 3.2s linear both,
-    titleGlitchRight 5s 3.4s infinite;
-
+  animation: crossRight 3.2s both;
   will-change: transform, opacity;
 }
 
 .title-dot {
-  animation: dotReveal 3.2s linear both;
-  will-change: transform, opacity;
+  animation: dotReveal 3.2s ease both;
 }
 
+/* 最初は速く、交差点へ向かって減速 */
 @keyframes crossLeft {
   0% {
     opacity: 0;
-    transform: translate3d(-0.7em, 0, 0) scale(1.16);
+    transform: translate3d(-0.8em, 0, 0) scale(1.12);
+    animation-timing-function: cubic-bezier(0.05, 0.7, 0.1, 1);
   }
 
-  15% {
+  12% {
     opacity: 1;
-    transform: translate3d(-0.25em, 0, 0) scale(1.11);
-  }
-
-  30% {
-    transform: translate3d(0.25em, 0, 0) scale(1.07);
-  }
-
-  45% {
-    transform: translate3d(0.75em, 0, 0) scale(1.03);
   }
 
   55% {
+    opacity: 1;
     transform: translate3d(1em, 0, 0) scale(1);
-  }
 
-  68% {
-    transform: translate3d(0.72em, 0, 0) scale(1);
-  }
-
-  80% {
-    transform: translate3d(0.42em, 0, 0) scale(1);
-  }
-
-  90% {
-    transform: translate3d(0.2em, 0, 0) scale(1);
+    /* ここから徐々に加速 */
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
   }
 
   100% {
@@ -1928,41 +1906,42 @@ a.news-item:hover {
 @keyframes crossRight {
   0% {
     opacity: 0;
-    transform: translate3d(0.7em, 0, 0) scale(1.16);
+    transform: translate3d(0.8em, 0, 0) scale(1.12);
+    animation-timing-function: cubic-bezier(0.05, 0.7, 0.1, 1);
   }
 
-  15% {
+  12% {
     opacity: 1;
-    transform: translate3d(0.25em, 0, 0) scale(1.11);
-  }
-
-  30% {
-    transform: translate3d(-0.25em, 0, 0) scale(1.07);
-  }
-
-  45% {
-    transform: translate3d(-0.75em, 0, 0) scale(1.03);
   }
 
   55% {
+    opacity: 1;
     transform: translate3d(-1em, 0, 0) scale(1);
-  }
 
-  68% {
-    transform: translate3d(-0.72em, 0, 0) scale(1);
-  }
-
-  80% {
-    transform: translate3d(-0.42em, 0, 0) scale(1);
-  }
-
-  90% {
-    transform: translate3d(-0.2em, 0, 0) scale(1);
+    /* 交差後に加速 */
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
   }
 
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes dotReveal {
+  0%,
+  45% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+
+  70% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -2002,5 +1981,135 @@ a.news-item:hover {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+/* =========================
+   CONTINUOUS GLITCH
+   交差アニメーション終了後に開始
+========================= */
+
+.effect-cross-glitch > span::before,
+.effect-cross-glitch > span::after {
+  content: attr(data-text);
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0;
+}
+
+.effect-cross-glitch > span::before {
+  text-shadow: 4px 0 rgba(80, 170, 255, 0.85);
+
+  animation:
+    continuousGlitchBlue 1.7s 3.2s infinite steps(1, end);
+}
+
+.effect-cross-glitch > span::after {
+  text-shadow: -4px 0 rgba(255, 70, 140, 0.8);
+
+  animation:
+    continuousGlitchRed 1.7s 3.2s infinite steps(1, end);
+}
+
+@keyframes continuousGlitchBlue {
+  0%,
+  18% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  19% {
+    opacity: 0.75;
+    transform: translate3d(-5px, 0, 0);
+    clip-path: inset(8% 0 64% 0);
+  }
+
+  22% {
+    opacity: 0.45;
+    transform: translate3d(4px, 0, 0);
+    clip-path: inset(52% 0 18% 0);
+  }
+
+  25%,
+  57% {
+    opacity: 0;
+  }
+
+  58% {
+    opacity: 0.65;
+    transform: translate3d(6px, 0, 0);
+    clip-path: inset(32% 0 42% 0);
+  }
+
+  61% {
+    opacity: 0;
+  }
+
+  82% {
+    opacity: 0;
+  }
+
+  83% {
+    opacity: 0.8;
+    transform: translate3d(-4px, 0, 0);
+    clip-path: inset(70% 0 5% 0);
+  }
+
+  86%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes continuousGlitchRed {
+  0%,
+  23% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  24% {
+    opacity: 0.7;
+    transform: translate3d(5px, 0, 0);
+    clip-path: inset(60% 0 10% 0);
+  }
+
+  27% {
+    opacity: 0.4;
+    transform: translate3d(-4px, 0, 0);
+    clip-path: inset(20% 0 55% 0);
+  }
+
+  30%,
+  62% {
+    opacity: 0;
+  }
+
+  63% {
+    opacity: 0.7;
+    transform: translate3d(-6px, 0, 0);
+    clip-path: inset(12% 0 65% 0);
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  88% {
+    opacity: 0;
+  }
+
+  89% {
+    opacity: 0.75;
+    transform: translate3d(4px, 0, 0);
+    clip-path: inset(44% 0 30% 0);
+  }
+
+  92%,
+  100% {
+    opacity: 0;
   }
 }
