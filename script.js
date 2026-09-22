@@ -29,11 +29,11 @@ navLinks.forEach((link) => {
 });
 
 
-const revealElements = document.querySelectorAll(
+const sharedRevealElements = document.querySelectorAll(
   ".news-section, .about-section, .games-section, .access-section, .faq-section, .contact-section"
 );
 
-revealElements.forEach((element) => {
+sharedRevealElements.forEach((element) => {
   element.classList.add("reveal");
 });
 
