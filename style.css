@@ -1864,17 +1864,17 @@ a.news-item:hover {
 
 /* 超：右へ進み、脱出を越えて戻る */
 .title-left {
-  animation: crossLeft 3s both;
+  animation: crossLeft 2s both;
   will-change: transform, opacity;
 }
 
 .title-right {
-  animation: crossRight 3s both;
+  animation: crossRight 2s both;
   will-change: transform, opacity;
 }
 
 .title-dot {
-  animation: dotReveal 3s ease both;
+  animation: dotReveal 2s ease both;
 }
 
 /* 最初は速く、交差点へ向かって減速 */
@@ -1962,14 +1962,14 @@ a.news-item:hover {
   text-shadow: 4px 0 rgba(80, 170, 255, 0.85);
 
   animation:
-    continuousGlitchBlue 1.7s 3s infinite steps(1, end);
+    continuousGlitchBlue 1.7s 2s infinite steps(1, end);
 }
 
 .effect-cross-glitch > span::after {
   text-shadow: -4px 0 rgba(255, 70, 140, 0.8);
 
   animation:
-    continuousGlitchRed 1.7s 3s infinite steps(1, end);
+    continuousGlitchRed 1.7s 2s infinite steps(1, end);
 }
 
 @keyframes continuousGlitchBlue {
