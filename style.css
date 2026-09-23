@@ -2075,10 +2075,13 @@ a.news-item:hover {
   width: 0.62em;
   height: 0.62em;
   display: inline-block;
+
+  margin: 0 0.14em;
+
   opacity: 0;
   transform-origin: center;
 
-  animation: gearReveal 1s ease-out forwards;
+  animation: gearReveal 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .title-gear svg {
@@ -2090,17 +2093,22 @@ a.news-item:hover {
 @keyframes gearReveal {
   0% {
     opacity: 0;
-    transform: rotate(-180deg) scale(0.45);
+    transform: rotate(-260deg) scale(0.45);
   }
 
-  42% {
+  25% {
     opacity: 0;
-    transform: rotate(-180deg) scale(0.45);
+    transform: rotate(-260deg) scale(0.45);
   }
 
-  68% {
+  50% {
     opacity: 1;
-    transform: rotate(20deg) scale(1.08);
+    transform: rotate(-140deg) scale(0.92);
+  }
+
+  78% {
+    opacity: 1;
+    transform: rotate(-25deg) scale(1.03);
   }
 
   100% {
