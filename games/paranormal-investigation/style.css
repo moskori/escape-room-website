@@ -707,3 +707,111 @@ a {
     font-size: 22px;
   }
 }
+/* ===== page entry fog + fluorescent flicker ===== */
+
+/* ページ全体に薄い霧をかける */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0) 58%),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.05) 20%,
+      rgba(255, 255, 255, 0.08) 48%,
+      rgba(255, 255, 255, 0.04) 72%,
+      rgba(255, 255, 255, 0.08) 100%
+    );
+  opacity: 0;
+  animation: fogEntry 2.4s ease-out forwards;
+}
+
+/* 初回表示で文字を蛍光灯っぽくチカつかせる */
+.game-hero h1,
+.game-hero-genre,
+.game-hero-lead,
+.game-hero-description,
+.game-hero-meta span,
+.game-back,
+.game-code,
+.game-scroll {
+  animation: fluorescentFlicker 1.6s ease-out forwards;
+}
+
+/* 霧の立ち上がり */
+@keyframes fogEntry {
+  0% {
+    opacity: 0;
+    filter: blur(0px);
+  }
+  15% {
+    opacity: 0.42;
+    filter: blur(2px);
+  }
+  38% {
+    opacity: 0.30;
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 0.14;
+    filter: blur(7px);
+  }
+}
+
+/* 切れかけの蛍光灯っぽい文字チカチカ */
+@keyframes fluorescentFlicker {
+  0% {
+    opacity: 0.08;
+    text-shadow: none;
+    filter: brightness(0.7);
+  }
+  6% {
+    opacity: 1;
+    text-shadow: 0 0 6px rgba(255,255,255,0.65);
+    filter: brightness(1.35);
+  }
+  10% {
+    opacity: 0.18;
+    text-shadow: none;
+    filter: brightness(0.75);
+  }
+  14% {
+    opacity: 0.95;
+    text-shadow: 0 0 10px rgba(255,255,255,0.75);
+    filter: brightness(1.45);
+  }
+  20% {
+    opacity: 0.32;
+    text-shadow: none;
+    filter: brightness(0.85);
+  }
+  27% {
+    opacity: 1;
+    text-shadow: 0 0 14px rgba(255,255,255,0.8);
+    filter: brightness(1.5);
+  }
+  34% {
+    opacity: 0.55;
+    text-shadow: 0 0 3px rgba(255,255,255,0.3);
+    filter: brightness(0.95);
+  }
+  42% {
+    opacity: 0.92;
+    text-shadow: 0 0 10px rgba(255,255,255,0.65);
+    filter: brightness(1.25);
+  }
+  52% {
+    opacity: 0.72;
+    text-shadow: 0 0 4px rgba(255,255,255,0.25);
+    filter: brightness(0.98);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255,255,255,0.18);
+    filter: brightness(1);
+  }
+}
