@@ -2116,4 +2116,9 @@ a.news-item:hover {
     transform: rotate(0deg) scale(1);
   }
 }
-
+.site-nav .nav-games-button,
+.site-nav .nav-games-button:hover,
+.site-nav .nav-games-button:active,
+.site-nav .nav-games-button:focus {
+  color: #0b0d0f;
+}
