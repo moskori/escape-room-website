@@ -2071,3 +2071,33 @@ a.news-item:hover {
     opacity: 0;
   }
 }
+.title-gear {
+  display: inline-block;
+  font-size: 0.62em;
+  transform-origin: center;
+  opacity: 0;
+
+  animation: gearReveal 1s ease-out forwards;
+}
+
+@keyframes gearReveal {
+  0% {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.45);
+  }
+
+  42% {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.45);
+  }
+
+  68% {
+    opacity: 1;
+    transform: rotate(20deg) scale(1.08);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
