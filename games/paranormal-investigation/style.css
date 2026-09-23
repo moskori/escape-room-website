@@ -822,7 +822,7 @@ body::before {
 
   animation:
     fluorescentFlicker 1.6s ease-out forwards,
-    anomalyCharacterFlicker 1.8s 1.7s infinite steps(1, end);
+    anomalyCharacterFlicker 3s 1.7s infinite steps(1, end);
 }
 
 @keyframes anomalyCharacterFlicker {
