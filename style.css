@@ -2075,42 +2075,38 @@ a.news-item:hover {
   width: 0.62em;
   height: 0.62em;
   display: inline-block;
-  position: relative;
   opacity: 0;
   transform-origin: center;
-
-  background: #fff;
-  border-radius: 50%;
 
   animation: gearReveal 1s ease-out forwards;
 }
 
-/* 中央の穴 */
-.title-gear::before {
-  content: "";
-  position: absolute;
-  width: 0.24em;
-  height: 0.24em;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #09090b;
-  border-radius: 50%;
+.title-gear svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
-/* 歯 */
-.title-gear::after {
-  content: "";
-  position: absolute;
-  inset: -0.13em;
+@keyframes gearReveal {
+  0% {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.45);
+  }
 
-  background:
-    linear-gradient(#fff, #fff) center top / 0.16em 0.22em no-repeat,
-    linear-gradient(#fff, #fff) center bottom / 0.16em 0.22em no-repeat,
-    linear-gradient(#fff, #fff) left center / 0.22em 0.16em no-repeat,
-    linear-gradient(#fff, #fff) right center / 0.22em 0.16em no-repeat;
+  42% {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.45);
+  }
 
-  transform: rotate(45deg);
+  68% {
+    opacity: 1;
+    transform: rotate(20deg) scale(1.08);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
 }
 
 @keyframes gearReveal {
