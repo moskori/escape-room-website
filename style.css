@@ -2135,11 +2135,10 @@ a.news-item:hover {
   height: 85px;
   max-width: 340px;
   object-fit: contain;
-  filter: invert(1) hue-rotate(180deg);
 }
 /* 暗いヘッダーになじむロゴプレート */
 .site-nav .nav-logo {
-  background: linear-gradient(145deg, #20262c, #101317);
+  background: linear-gradient(145deg, #c4c7c9, #999fa4);
   padding: 6px 12px;
   border: 1px solid #3c454e;
   border-radius: 6px;
@@ -2148,7 +2147,7 @@ a.news-item:hover {
 }
 
 .site-nav .nav-logo:hover {
-  background: linear-gradient(145deg, #2b3036, #171b20);
+  background: linear-gradient(145deg, #d0d3d5, #a9afb4);
   border-color: #8d5559;
 }
 
