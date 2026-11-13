@@ -2142,3 +2142,23 @@ a.news-item:hover {
   padding: 6px 12px;
   border-radius: 4px;
 }
+
+/* スマホ版：ヘッダーロゴのサイズ調整 */
+@media (max-width: 600px) {
+  .site-nav .nav-logo {
+    padding: 3px 5px;
+    border-radius: 3px;
+  }
+
+  .site-nav .nav-logo-image {
+    height: 46px;
+    width: auto;
+    max-width: 125px;
+  }
+
+  .site-nav {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+}
+
