@@ -2132,8 +2132,8 @@ a.news-item:hover {
 .site-nav .nav-logo-image {
   display: block;
   width: auto;
-  height: 42px;
-  max-width: 180px;
+  height: 56px;
+  max-width: 240px;
   object-fit: contain;
 }
 /* 会社ロゴ用の背景プレート */
