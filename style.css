@@ -2175,3 +2175,24 @@ a.news-item:hover {
   }
 }
 
+
+/* 日本語の説明文は画面幅に合わせて自然に折り返す */
+.about-section .section-header {
+  align-items: start;
+}
+
+.about-copy-sentence {
+  display: block;
+}
+
+.about-copy-sentence + .about-copy-sentence {
+  margin-top: 0.65em;
+}
+
+.about-section .section-description,
+.experience-card p,
+.featured-game-content .game-description {
+  line-break: strict;
+  word-break: normal;
+  text-wrap: pretty;
+}
