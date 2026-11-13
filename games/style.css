@@ -210,61 +210,19 @@ footer p {
   margin: 0;
 }
 
-@media (max-width: 700px) {
-  .games-section {
-    width: min(100% - 36px, 1100px);
-    padding: 72px 0 90px;
-  }
-
-  .games-section > h1 {
-    font-size: 48px;
-  }
-
-  .games-section > h1 + p {
-    margin-bottom: 38px;
-  }
-
-  .game-card {
-    min-height: 380px;
-    padding: 34px 24px;
-  }
-
-  .game-card > p:first-child {
-    top: 22px;
-    right: 22px;
-  }
-
-/* 公演カード背景：ゲームロゴの透かし */
+/* 公演カード：背景ロゴ */
 .game-card::after {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 0;
+  pointer-events: none;
 
   background-image: url("paranormal-investigation/images/超・怪異研究所の透明ロゴ.png");
   background-repeat: no-repeat;
   background-position: 82% center;
   background-size: 58% auto;
-
-  opacity: 0.13;
-  pointer-events: none;
-  z-index: 0;
-}
-
-
-/* 公演カード背景：ゲームロゴの透かし */
-.game-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image: url("paranormal-investigation/images/超・怪異研究所の透明ロゴ.png");
-  background-repeat: no-repeat;
-  background-position: 82% center;
-  background-size: 58% auto;
-
-  opacity: 0.13;
-  pointer-events: none;
-  z-index: 0;
+  opacity: 0.18;
 }
 
 /* スマホ表示 */
@@ -299,12 +257,7 @@ footer p {
   .game-card::after {
     background-size: 85% auto;
     background-position: center 38%;
-    opacity: 0.10;
+    opacity: 0.12;
   }
 }
 
-
-  .game-card h2 {
-    font-size: 44px;
-  }
-}
