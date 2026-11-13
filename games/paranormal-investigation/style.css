@@ -922,3 +922,18 @@ body::before {
     width: 100%;
   }
 }
+
+/* 公演ロゴの四辺を背景へなじませる */
+.game-hero-logo img {
+  -webkit-mask-image: radial-gradient(
+    ellipse closest-side at center,
+    black 72%,
+    transparent 100%
+  );
+
+  mask-image: radial-gradient(
+    ellipse closest-side at center,
+    black 72%,
+    transparent 100%
+  );
+}
