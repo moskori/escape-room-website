@@ -899,21 +899,23 @@ body::before {
   }
 }
 
-/* 超・怪異研究所：公演ロゴ */
+
+/* 超・怪異研究所：透過ロゴ */
 .game-hero .game-hero-logo {
   width: min(100%, 850px);
-  margin: 0;
+  margin: 0 auto;
   line-height: 1;
+  mix-blend-mode: normal;
 }
 
-.game-hero-logo img {
+.game-hero .game-hero-logo img {
   display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
-
-  /* 黒背景をページになじませる */
-  mix-blend-mode: screen;
+  mix-blend-mode: normal;
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 /* スマホ表示 */
@@ -921,30 +923,4 @@ body::before {
   .game-hero .game-hero-logo {
     width: 100%;
   }
-}
-
-/* 公演ロゴの四辺を背景へなじませる */
-.game-hero-logo img {
-  -webkit-mask-image: radial-gradient(
-    ellipse closest-side at center,
-    black 72%,
-    transparent 100%
-  );
-
-  mask-image: radial-gradient(
-    ellipse closest-side at center,
-    black 72%,
-    transparent 100%
-  );
-}
-
-/* 公演ロゴ全体を背景と合成する */
-.game-hero .game-hero-logo {
-  mix-blend-mode: screen;
-}
-
-.game-hero .game-hero-logo img {
-  mix-blend-mode: normal;
-  -webkit-mask-image: none;
-  mask-image: none;
 }
