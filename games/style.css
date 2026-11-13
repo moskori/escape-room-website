@@ -255,8 +255,8 @@ footer p {
   }
 
   .game-card::after {
-    background-size: 85% auto;
-    background-position: center 38%;
+   background-position: 96% 55%;
+background-size: 40% auto;
     opacity: 0.12;
   }
 }
