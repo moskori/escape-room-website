@@ -87,7 +87,10 @@ main {
   position: absolute;
   inset: 0;
 
+  z-index: 1;
+
   background-image:
+    linear-gradient(90deg, rgba(14, 17, 21, 0.95) 0%, rgba(14, 17, 21, 0.88) 40%, rgba(14, 17, 21, 0.35) 100%),
     linear-gradient(
       rgba(255, 255, 255, 0.025) 1px,
       transparent 1px
@@ -98,14 +101,14 @@ main {
       transparent 1px
     );
 
-  background-size: 36px 36px;
+  background-size: auto, 36px 36px, 36px 36px;
 
   pointer-events: none;
 }
 
 .game-card > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .game-card > p:first-child {
@@ -125,7 +128,8 @@ main {
   margin: 0 0 22px;
 
   font-size: clamp(44px, 7vw, 72px);
-  line-height: 1;
+  line-height: 1.15;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 
   letter-spacing: -0.03em;
 
@@ -133,11 +137,11 @@ main {
 }
 
 .game-card h2 + p {
-  max-width: 600px;
+  max-width: 470px;
   margin: 0 0 26px;
 
   line-height: 1.9;
-  color: #aeb7bd;
+  color: #e0e5e9;
 }
 
 .game-card p {
@@ -159,7 +163,7 @@ main {
   font-size: 10px;
   letter-spacing: 0.14em;
 
-  color: #929ca4;
+  color: #c4cdd4;
 }
 
 .game-card-link {
@@ -220,9 +224,9 @@ footer p {
 
   background-image: url("paranormal-investigation/images/超・怪異研究所の透明ロゴ.png");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  opacity: 0.18;
+  background-position: right center;
+  background-size: auto 100%;
+  opacity: 0.65;
 }
 
 /* スマホ表示 */
@@ -242,7 +246,7 @@ footer p {
 
   .game-card {
     min-height: 380px;
-    padding: 34px 24px;
+    padding: 230px 24px 34px;
   }
 
   .game-card > p:first-child {
@@ -251,10 +255,18 @@ footer p {
   }
 
   .game-card h2 {
-    font-size: 44px;
+    font-size: clamp(28px, 7.5vw, 44px);
+  }
+
+  .game-card::before {
+    background-image:
+      linear-gradient(180deg, rgba(14, 17, 21, 0.3) 0, rgba(14, 17, 21, 0.45) 140px, rgba(14, 17, 21, 0.95) 230px, #0e1115 100%),
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   }
 
   .game-card::after {
-    opacity: 0.12;
+    background-position: center 20px;
+    background-size: auto 210px;
   }
 }
