@@ -937,3 +937,14 @@ body::before {
     transparent 100%
   );
 }
+
+/* 公演ロゴ全体を背景と合成する */
+.game-hero .game-hero-logo {
+  mix-blend-mode: screen;
+}
+
+.game-hero .game-hero-logo img {
+  mix-blend-mode: normal;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
