@@ -277,6 +277,7 @@ a {
   font-weight: 700;
 
   color: #ddd4e3;
+  white-space: nowrap;
 }
 
 .story-file {
@@ -343,6 +344,7 @@ a {
 
   .story-main .story-lead {
     font-size: 20px;
+    white-space: normal;
   }
 }
 .system-section {
