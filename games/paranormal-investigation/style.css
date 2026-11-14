@@ -253,10 +253,7 @@ a {
 }
 
 .story-layout {
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 40px;
-  align-items: start;
+  max-width: 760px;
 }
 
 .story-main {
@@ -281,6 +278,7 @@ a {
 }
 
 .story-file {
+  margin-top: 36px;
   padding: 28px;
 
   background:
@@ -336,10 +334,6 @@ a {
 @media (max-width: 800px) {
   .story-section {
     padding: 80px 22px;
-  }
-
-  .story-layout {
-    grid-template-columns: 1fr;
   }
 
   .story-main .story-lead {
