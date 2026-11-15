@@ -992,7 +992,7 @@ body::before {
   opacity: 1;
   transform: scale(1);
   filter: contrast(1.2) brightness(0.82);
-  animation: investigation-fog-disperse 1.25s ease-out 0.5s forwards;
+  animation: investigation-fog-disperse 2s ease-out 0.5s forwards;
 }
 
 .game-page::after {
@@ -1012,10 +1012,16 @@ body::before {
     transform: scale(1);
   }
 
+  72% {
+    opacity: 0.82;
+    filter: blur(8px);
+    transform: scale(1.12);
+  }
+
   100% {
     opacity: 0;
-    filter: blur(48px);
-    transform: scale(1.8);
+    filter: blur(38px);
+    transform: scale(1.55);
   }
 }
 
