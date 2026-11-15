@@ -888,7 +888,7 @@ a {
 }
 
 .game-hero .game-hero-logo img {
-  animation: gameLogoFlicker 1.8s steps(1, end) both;
+  animation: gameLogoFlicker 1.8s steps(1, end) 4.2s both;
 }
 
 @keyframes gameLogoFlicker {
@@ -953,78 +953,77 @@ a {
   pointer-events: none;
 }
 
-.game-title-covered .game-title-smoke .smoke-copy {
+.game-title-covered .game-title-smoke .smoke-puff {
   position: absolute;
   display: block;
   width: 96%;
+  pointer-events: none;
+  animation-duration: 1.4s;
+  animation-timing-function: cubic-bezier(.45, 0, .55, 1);
+  animation-fill-mode: forwards;
+}
+
+.game-title-covered .smoke-puff img {
+  display: block;
+  width: 100%;
   height: auto;
-  max-width: none;
-  opacity: 0;
   filter: saturate(1.16) drop-shadow(0 0 18px rgba(159, 102, 222, 0.38));
+  animation: smoke-gentle-drift 5.5s ease-in-out infinite alternate;
 }
 
-.game-title-covered .smoke-left {
-  animation: title-smoke-left 4s cubic-bezier(.4, 0, .2, 1) both;
-}
-
-.game-title-covered .smoke-right {
-  animation: title-smoke-right 4s cubic-bezier(.4, 0, .2, 1) both;
-}
-
-.game-title-covered .smoke-left-top {
+.game-title-covered .smoke-puff-left-top {
   top: -20%;
   left: -8%;
-  animation-delay: 0.08s;
+  animation-name: smoke-clear-left;
+  animation-delay: 2s;
 }
 
-.game-title-covered .smoke-left-middle {
+.game-title-covered .smoke-puff-left-middle {
   top: 12%;
   left: -18%;
-  animation-delay: 0.14s;
+  animation-name: smoke-clear-left;
+  animation-delay: 2.24s;
 }
 
-.game-title-covered .smoke-left-bottom {
+.game-title-covered .smoke-puff-left-bottom {
   bottom: -20%;
   left: -8%;
-  animation-delay: 0.02s;
+  animation-name: smoke-clear-left;
+  animation-delay: 2.48s;
 }
 
-.game-title-covered .smoke-right-top {
+.game-title-covered .smoke-puff-right-top {
   top: -20%;
   right: -8%;
-  animation-delay: 0.12s;
+  animation-name: smoke-clear-right;
+  animation-delay: 2.12s;
 }
 
-.game-title-covered .smoke-right-middle {
+.game-title-covered .smoke-puff-right-middle {
   top: 12%;
   right: -18%;
-  animation-delay: 0.04s;
+  animation-name: smoke-clear-right;
+  animation-delay: 2.36s;
 }
 
-.game-title-covered .smoke-right-bottom {
+.game-title-covered .smoke-puff-right-bottom {
   right: -8%;
   bottom: -20%;
-  animation-delay: 0.16s;
+  animation-name: smoke-clear-right;
+  animation-delay: 2.6s;
 }
 
-@keyframes title-smoke-left {
-  0% { opacity: 0; transform: translate(0, 0) scale(.98) rotate(0); }
-  8% { opacity: .98; }
-  20% { transform: translate(0, -0.5%) scale(1.005) rotate(.35deg); }
-  36% { transform: translate(0, 0.45%) scale(1) rotate(-.3deg); }
-  50% { opacity: .98; transform: translate(0, -0.25%) scale(1.004) rotate(.2deg); }
-  56% { opacity: .98; transform: translate(0, 0.2%) scale(1.004) rotate(.2deg); }
-  100% { opacity: 0; transform: translate(-130vw, -1vh) scale(.99) rotate(-3deg); }
+@keyframes smoke-gentle-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(0, -5px, 0) scale(1.012); }
 }
 
-@keyframes title-smoke-right {
-  0% { opacity: 0; transform: translate(0, 0) scale(.98) rotate(0); }
-  8% { opacity: .98; }
-  20% { transform: translate(0, 0.45%) scale(1.005) rotate(-.3deg); }
-  36% { transform: translate(0, -0.5%) scale(1) rotate(.35deg); }
-  50% { opacity: .98; transform: translate(0, 0.25%) scale(1.004) rotate(-.2deg); }
-  56% { opacity: .98; transform: translate(0, -0.2%) scale(1.004) rotate(-.2deg); }
-  100% { opacity: 0; transform: translate(130vw, 1vh) scale(.99) rotate(3deg); }
+@keyframes smoke-clear-left {
+  to { opacity: 0; transform: translate3d(-125vw, -1vh, 0) scale(.96); }
+}
+
+@keyframes smoke-clear-right {
+  to { opacity: 0; transform: translate3d(125vw, 1vh, 0) scale(.96); }
 }
 
 @media (prefers-reduced-motion: reduce) {
