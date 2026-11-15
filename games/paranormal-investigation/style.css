@@ -979,3 +979,61 @@ body::before {
     opacity: 1;
   }
 }
+
+/* Opening fog that clears from the investigation scene */
+.game-page::before,
+.game-page::after {
+  content: "";
+  position: fixed;
+  inset: -18%;
+  z-index: 9999;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 18% 34%, rgba(215, 217, 224, 0.48), transparent 34%),
+    radial-gradient(ellipse at 78% 28%, rgba(181, 178, 198, 0.42), transparent 38%),
+    radial-gradient(ellipse at 48% 72%, rgba(203, 202, 211, 0.48), transparent 40%),
+    radial-gradient(ellipse at 90% 78%, rgba(166, 163, 181, 0.34), transparent 32%);
+  filter: blur(28px);
+  opacity: 0.94;
+  transform: scale(0.88);
+  animation: investigation-fog-clear 2.2s ease-out forwards;
+}
+
+.game-page::after {
+  z-index: 9998;
+  background:
+    radial-gradient(ellipse at 8% 70%, rgba(190, 192, 202, 0.36), transparent 36%),
+    radial-gradient(ellipse at 65% 48%, rgba(221, 221, 228, 0.34), transparent 42%),
+    radial-gradient(ellipse at 36% 18%, rgba(165, 162, 181, 0.3), transparent 34%);
+  filter: blur(42px);
+  animation-duration: 2.5s;
+  animation-delay: 0.08s;
+}
+
+@keyframes investigation-fog-clear {
+  0% {
+    opacity: 0.94;
+    filter: blur(22px);
+    transform: translate3d(0, 0, 0) scale(0.88);
+  }
+
+  42% {
+    opacity: 0.86;
+    filter: blur(30px);
+    transform: translate3d(-1%, 1%, 0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(52px);
+    transform: translate3d(2%, -2%, 0) scale(1.38);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-page::before,
+  .game-page::after {
+    animation: none;
+    opacity: 0;
+  }
+}
