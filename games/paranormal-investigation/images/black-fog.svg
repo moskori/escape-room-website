@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="none">
+  <defs>
+    <radialGradient id="smoke" cx="50%" cy="48%" r="68%">
+      <stop offset="0" stop-color="#020203" stop-opacity=".99"/>
+      <stop offset=".48" stop-color="#08080b" stop-opacity=".97"/>
+      <stop offset=".76" stop-color="#17161d" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#26242c" stop-opacity=".12"/>
+    </radialGradient>
+    <radialGradient id="wisp" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#393640" stop-opacity=".68"/>
+      <stop offset="1" stop-color="#17161b" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="rough-cloud" x="-15%" y="-20%" width="130%" height="140%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".006 .014" numOctaves="3" seed="17" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="105" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="soft-wisp" x="-20%" y="-30%" width="140%" height="160%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#rough-cloud)">
+    <path fill="url(#smoke)" d="M-90 95 C50 6 172 66 250 34 C360-10 441 98 537 62 C652 18 711 65 784 42 C890 9 955 104 1052 64 C1170 16 1242 79 1322 45 C1455-9 1538 50 1695 5 L1690 1000 L-90 1000Z"/>
+    <path fill="url(#smoke)" d="M-80 330 C25 266 126 295 219 246 C302 202 388 278 482 231 C584 179 647 288 741 244 C839 198 894 268 985 223 C1095 169 1170 281 1263 236 C1376 182 1476 265 1690 199 L1690 865 C1538 812 1454 882 1346 829 C1245 780 1150 867 1048 813 C948 758 874 835 779 790 C673 738 601 843 505 788 C399 728 328 811 229 764 C126 715 43 787-80 716Z"/>
+    <path fill="url(#smoke)" d="M-100 607 C56 543 133 624 250 566 C365 509 437 604 539 554 C660 495 730 605 830 550 C936 492 1012 596 1112 542 C1218 486 1322 595 1424 540 C1510 494 1585 533 1700 473 L1700 1070 L-100 1070Z"/>
+  </g>
+
+  <g filter="url(#soft-wisp)" opacity=".8">
+    <ellipse cx="190" cy="212" rx="270" ry="96" fill="url(#wisp)" transform="rotate(-14 190 212)"/>
+    <ellipse cx="800" cy="158" rx="390" ry="102" fill="url(#wisp)" transform="rotate(8 800 158)"/>
+    <ellipse cx="1380" cy="303" rx="290" ry="108" fill="url(#wisp)" transform="rotate(-12 1380 303)"/>
+    <ellipse cx="445" cy="731" rx="360" ry="116" fill="url(#wisp)" transform="rotate(9 445 731)"/>
+    <ellipse cx="1135" cy="786" rx="430" ry="125" fill="url(#wisp)" transform="rotate(-9 1135 786)"/>
+  </g>
+</svg>
