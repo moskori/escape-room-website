@@ -2262,3 +2262,86 @@ a.news-item:hover {
   word-break: normal;
   text-wrap: pretty;
 }
+
+.contact-review {
+  margin-top: 28px;
+  padding: 24px;
+  border: 1px solid #3a444c;
+  border-radius: 6px;
+  background: #0d1114;
+}
+
+.contact-review h2,
+.contact-form-success h2 {
+  margin: 0 0 18px;
+  color: #eef1f2;
+  font-size: 22px;
+}
+
+.contact-review-list {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+
+.contact-review-list > div {
+  display: grid;
+  gap: 6px;
+}
+
+.contact-review-list dt {
+  color: #9ea8af;
+  font-size: 13px;
+}
+
+.contact-review-list dd {
+  margin: 0;
+  color: #eef1f2;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.contact-review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.contact-review-actions .contact-primary-button {
+  margin-top: 0;
+}
+
+.contact-secondary-button {
+  padding: 12px 16px;
+  border: 1px solid #59646c;
+  border-radius: 4px;
+  background: transparent;
+  color: #eef1f2;
+  font: inherit;
+  cursor: pointer;
+}
+
+.contact-primary-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.contact-form-success {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid #3a5a48;
+  border-radius: 6px;
+  background: #111a15;
+}
+
+.contact-form-success p {
+  margin: 0;
+  color: #c4d3ca;
+  line-height: 1.8;
+}
+
+[hidden] {
+  display: none !important;
+}

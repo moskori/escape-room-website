@@ -71,19 +71,65 @@ if ("IntersectionObserver" in window) {
 const contactForm = document.querySelector("#contact-form");
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  const fields = document.querySelector("#contact-form-fields");
+  const review = document.querySelector("#contact-review");
+  const status = document.querySelector("#contact-form-status");
+  const sendButton = document.querySelector("#contact-send-button");
+  const success = document.querySelector("#contact-form-success");
+
+  document.querySelector("#contact-review-button").addEventListener("click", () => {
+    if (!contactForm.reportValidity()) return;
+
+    const values = new FormData(contactForm);
+    document.querySelector("#review-name").textContent = values.get("name");
+    document.querySelector("#review-email").textContent = values.get("email");
+    document.querySelector("#review-subject").textContent = values.get("subject");
+    document.querySelector("#review-message").textContent = values.get("message");
+
+    fields.hidden = true;
+    review.hidden = false;
+    status.textContent = "";
+    review.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  document.querySelector("#contact-edit-button").addEventListener("click", () => {
+    review.hidden = true;
+    fields.hidden = false;
+    document.querySelector("#contact-review-button").focus();
+  });
+
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    if (!contactForm.reportValidity()) return;
+
+    sendButton.disabled = true;
+    status.textContent = "送信しています…";
 
     const formData = new FormData(contactForm);
-    const name = String(formData.get("name")).trim();
-    const email = String(formData.get("email")).trim();
-    const subject = String(formData.get("subject")).trim();
-    const message = String(formData.get("message")).trim();
-    const body = `お名前: ${name}\nメールアドレス: ${email}\nお問い合わせ項目: ${subject}\n\nお問い合わせ内容:\n${message}`;
-    const mailto = `mailto:cho.dassyutsu@gmail.com?subject=${encodeURIComponent(`【超・脱出】${subject}`)}&body=${encodeURIComponent(body)}`;
+    formData.append("_subject", `【超・脱出】${formData.get("subject")}`);
+    formData.append("_replyto", formData.get("email"));
+    formData.append("_template", "table");
 
-    window.location.href = mailto;
-    document.querySelector("#contact-form-status").textContent =
-      "メールアプリが開いたら、内容をご確認のうえ送信してください。";
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/cho.dassyutsu@gmail.com", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+      const result = await response.json();
+
+      if (!response.ok || result.success === false || result.success === "false") {
+        throw new Error(result.message || "送信に失敗しました。");
+      }
+
+      contactForm.reset();
+      review.hidden = true;
+      status.hidden = true;
+      success.hidden = false;
+      success.scrollIntoView({ behavior: "smooth", block: "center" });
+    } catch (error) {
+      status.textContent = "送信できませんでした。通信環境をご確認のうえ、もう一度お試しください。";
+      sendButton.disabled = false;
+    }
   });
 }
