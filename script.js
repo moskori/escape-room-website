@@ -66,3 +66,24 @@ if ("IntersectionObserver" in window) {
 
 
 
+
+
+const contactForm = document.querySelector("#contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const name = String(formData.get("name")).trim();
+    const email = String(formData.get("email")).trim();
+    const subject = String(formData.get("subject")).trim();
+    const message = String(formData.get("message")).trim();
+    const body = `お名前: ${name}\nメールアドレス: ${email}\nお問い合わせ項目: ${subject}\n\nお問い合わせ内容:\n${message}`;
+    const mailto = `mailto:cho.dassyutsu@gmail.com?subject=${encodeURIComponent(`【超・脱出】${subject}`)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+    document.querySelector("#contact-form-status").textContent =
+      "メールアプリが開いたら、内容をご確認のうえ送信してください。";
+  });
+}
