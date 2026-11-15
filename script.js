@@ -111,10 +111,18 @@ if (contactForm) {
     formData.append("_template", "table");
 
     try {
+      const encodedFormData = new URLSearchParams();
+      for (const [key, value] of formData.entries()) {
+        encodedFormData.append(key, value);
+      }
+
       const response = await fetch("https://formsubmit.co/ajax/cho.dassyutsu@gmail.com", {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: formData,
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        body: encodedFormData,
       });
       const result = await response.json();
 
@@ -128,7 +136,10 @@ if (contactForm) {
       success.hidden = false;
       success.scrollIntoView({ behavior: "smooth", block: "center" });
     } catch (error) {
-      status.textContent = "送信できませんでした。通信環境をご確認のうえ、もう一度お試しください。";
+      const detail = error instanceof Error ? error.message : "";
+      status.textContent = detail
+        ? `送信できませんでした（${detail}）。時間をおいて再度お試しいただくか、cho.dassyutsu@gmail.com へ直接ご連絡ください。`
+        : "送信できませんでした。通信環境をご確認のうえ、もう一度お試しください。";
       sendButton.disabled = false;
     }
   });
