@@ -709,7 +709,6 @@ a {
 /* 初回表示で文字を蛍光灯っぽくチカつかせる */
 .game-hero h1,
 .game-hero-genre,
-.game-hero-lead,
 .game-hero-description,
 .game-hero-meta span,
 .game-back,
@@ -891,6 +890,16 @@ a {
   animation: gameLogoNoise 1.25s steps(1, end) 4.2s both;
 }
 
+.game-hero .game-hero-lead {
+  opacity: 0;
+  animation: tagline-fade-in 0.9s ease-out 5.55s both;
+}
+
+@keyframes tagline-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes gameLogoNoise {
   0%, 3% {
     opacity: 1;
@@ -924,6 +933,11 @@ a {
 }
 @media (prefers-reduced-motion: reduce) {
   .game-hero .game-hero-logo img {
+    animation: none;
+    opacity: 1;
+  }
+
+  .game-hero .game-hero-lead {
     animation: none;
     opacity: 1;
   }
